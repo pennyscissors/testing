@@ -1,2 +1,2 @@
 FROM alpine
-CMD ["sleep", "10000"]
+CMD ["sleep", "1000000000"]

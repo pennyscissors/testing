@@ -1,17 +1,17 @@
 imageScans:
-- policy:
-    semver: 
-      range: "*"
-  image: "strongmonkey1992/test-scan"
-  tagName: test-scan-1
-  secretRef:
-    name: dockerhub-secret
-  interval: 30s
-- policy:
-    semver: 
-      range: "*"
-  image: "strongmonkey1992/test-scan-1"
-  tagName: test-scan-2
-  secretRef:
-    name: dockerhub-secret
-  interval: 30s
+  - policy:
+      semver:
+        range: "*"
+    image: "scresporancher/hello-world"
+    tagName: policy-1
+    secretRef:
+      name: dockerhub-secret
+    interval: 30s
+  - policy:
+      semver:
+        range: "*"
+    image: "scresporancher/sleeptight"
+    tagName: policy-2
+    secretRef:
+      name: dockerhub-secret
+    interval: 30s

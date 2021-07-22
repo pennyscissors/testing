@@ -1,35 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-slave
+  name: hello-world
 spec:
   selector:
     matchLabels:
-      app: redis
-      role: slave
-      tier: backend
-  replicas: 2
+      app: hello-world
+  replicas: 1
   template:
     metadata:
       labels:
-        app: redis
-        role: slave
-        tier: backend
+        app: hello-world
     spec:
       containers:
-      - name: slave
-        image: index.docker.io/strongmonkey1992/test-scan:v1.0.3 # {"$imagescan": "test-scan-1"}
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
-        ports:
-        - containerPort: 6379
-      - name: slave-1
-        image: index.docker.io/strongmonkey1992/test-scan-1:v1.0.4@sha256:d1f2d2c0cf054ab6b271f0b6137f5d218c154119005c3e4f613d9a34317c2cfe # {"$imagescan": "test-scan-2:digest"}
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
-        ports:
-        - containerPort: 6379
+        - name: container-0
+          image: index.docker.io/scresporancher/hello-world:1.0.0 # {"$imagescan": "policy-1"}
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 6379
+        - name: container-1
+          image: index.docker.io/scresporancher/sleeptight@sha256:b018d32f14744ed633a412db76f41a280d5d2486ef181e02f3dbf32ddf07072a # {"$imagescan": "policy-2"}
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 80
