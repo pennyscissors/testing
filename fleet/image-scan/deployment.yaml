@@ -22,7 +22,7 @@ spec:
         ports:
         - containerPort: 6379
       - name: container-1
-        image: index.docker.io/scresporancher/sleeptight:1.0.1 # {"$imagescan": "policy-2"}
+        image: index.docker.io/scresporancher/sleeptight:1.0.3 # {"$imagescan": "policy-2"}
         resources:
           requests:
             cpu: 100m
