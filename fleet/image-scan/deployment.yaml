@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: container-0
-        image: index.docker.io/scresporancher/hello-world:1.0.1 # {"$imagescan": "policy-1"}
+        image: index.docker.io/scresporancher/hello-world:1.0.2 # {"$imagescan": "policy-1"}
         resources:
           requests:
             cpu: 100m
